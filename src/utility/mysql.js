@@ -1,9 +1,9 @@
 const mysql = require("mysql2");
 const util = require('util');
 
-const { mysqlSettings } = require('../database/config.json');
+const { mysql_settings } = require('../database/config.json');
 
-const db = mysql.createPool(mysqlSettings);
+const db = mysql.createPool(mysql_settings);
 const asyncQuery = util.promisify(db.query).bind(db);
 
 module.exports = {
